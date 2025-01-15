@@ -126,6 +126,7 @@ p {
     margin-right: auto;
     margin-bottom: 40px;
     margin-left: auto;
+    white-space: pre-line;
 }
 
 @media only screen and (min-width: 767px) {
@@ -139,6 +140,7 @@ p {
     margin-bottom: 20px;
 /*    font-size: 28px;*/
     font-weight: 300;
+    white-space: pre-line;
 /*    line-height: 1.2;*/
 }
 
@@ -245,4 +247,76 @@ p {
 
 .appstore-icon {
     width: 56px;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%; /* Full width by default for mobile */
+}
+
+.feature-item img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 20px 0 0;
+    flex: 0 0 150px;
+}
+
+.feature-item-text {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Mobile specific styles */
+@media only screen and (max-width: 766px) {
+    .feature-item {
+        width: 100%; /* Ensure full width on mobile */
+        flex-direction: row; /* Keep image and text side by side */
+        margin-bottom: 20px;
+    }
+
+    /* Remove right/left variations on mobile */
+    .feature-item-right,
+    .feature-item-left {
+        flex-direction: row; /* All items same direction on mobile */
+    }
+
+    .feature-item img {
+        width: 50px; /* Even smaller on mobile */
+        flex: 0 0 120px;
+        margin: 0 15px 0 0; /* Consistent right margin */
+    }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 767px) {
+    .feature-item {
+        width: calc(50% - 20px); /* Two columns on desktop */
+    }
+
+    .feature-item-right {
+        flex-direction: row-reverse;
+    }
+
+    .feature-item-right img {
+        margin: 0 0 0 20px;
+    }
+
+    .feature-item img {
+        width: 250px;
+        flex: 0 0 250px;
+    }
 }
