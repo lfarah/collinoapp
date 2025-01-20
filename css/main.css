@@ -323,3 +323,9 @@ p {
         flex: 0 0 250px;
     }
 }
+
+.press-kit-badge {
+    width: 120px;
+    height: auto;
+    padding-top: 16px; /* Adds 16px top padding */
+}
